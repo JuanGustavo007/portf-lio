@@ -17,7 +17,7 @@
         <img src="@/assets/imgs/git.png" alt="" />
       </a>
       <a
-        href="https://www.dropbox.com/s/faxx38yl25fw4x4/cv.pdf?dl=0"
+        href="https://www.dropbox.com/home?select=cv.pdf&preview=JUAN+GUSTAVO+cv.pdf"
         target="_blank"
       >
         <img src="@/assets/imgs/curriculo.png" alt="" />
