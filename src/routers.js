@@ -19,7 +19,7 @@ const routes = [
         component: CerticacoesComponent,
         children: [
           {
-            path: "html",
+            path: "",
             name: "html",
             component: HtmlComponent,
           },

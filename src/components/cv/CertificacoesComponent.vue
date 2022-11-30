@@ -1,18 +1,21 @@
 <template>
-  <div class="container p-5" id="certificacoes" @scroll="altura($event)">
+  <div class="container mb-3 p-5" id="certificacoes" @scroll="altura($event)">
     <h1 class="mb-4"><span>Certificações</span></h1>
     <div class="divisao"></div>
     <div class="botoes d-flex justify-content-center gap-4 mb-4 p-3">
-      <router-link :to="{ name: 'html' }" class="botao" @click="mudar"
+      <router-link :to="{ name: 'html' }" class="botao html" @click="mudar"
         >Html</router-link
       >
-      <router-link :to="{ name: 'javascript' }" class="botao" @click="mudar"
+      <router-link :to="{ name: 'javascript' }" class="botao js" @click="mudar"
         >Javascript</router-link
       >
-      <router-link :to="{ name: 'bootstrap' }" class="botao" @click="mudar"
+      <router-link
+        :to="{ name: 'bootstrap' }"
+        class="botao bootstrap"
+        @click="mudar"
         >Bootstrap</router-link
       >
-      <router-link :to="{ name: 'microsoft' }" class="botao" @click="mudar"
+      <router-link :to="{ name: 'microsoft' }" class="botao ai" @click="mudar"
         >AI-900</router-link
       >
     </div>
@@ -20,11 +23,9 @@
       <transition
         name="fade"
         mode="out-in"
-        enter-active-class="animate__animated animate__fadeInLeft"
+        enter-active-class="animate__animated animate__zoomIn"
       >
-        <keep-alive>
-          <router-view></router-view>
-        </keep-alive>
+        <router-view></router-view>
       </transition>
     </div>
   </div>
@@ -58,7 +59,7 @@ img {
 }
 
 .animate__animated.animate__fadeIn {
-  --animate-duration: 0.2s;
+  --animate-duration: 0.75s;
 }
 
 h1 {
