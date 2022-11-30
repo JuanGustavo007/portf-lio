@@ -1,16 +1,18 @@
 <template>
-  <div class="container mb-3 p-5" id="certificacoes" @scroll="altura($event)">
+  <div class="container p-5" id="certificacoes" @scroll="altura($event)">
     <h1 class="mb-4"><span>Certificações</span></h1>
     <div class="divisao"></div>
     <div class="botoes d-flex justify-content-center gap-4 mb-4 p-3">
-      <router-link :to="{ name: 'html' }" class="botao">Html</router-link>
-      <router-link :to="{ name: 'javascript' }" class="botao"
+      <router-link :to="{ name: 'html' }" class="botao" @click="mudar"
+        >Html</router-link
+      >
+      <router-link :to="{ name: 'javascript' }" class="botao" @click="mudar"
         >Javascript</router-link
       >
-      <router-link :to="{ name: 'bootstrap' }" class="botao"
+      <router-link :to="{ name: 'bootstrap' }" class="botao" @click="mudar"
         >Bootstrap</router-link
       >
-      <router-link :to="{ name: 'microsoft' }" class="botao"
+      <router-link :to="{ name: 'microsoft' }" class="botao" @click="mudar"
         >AI-900</router-link
       >
     </div>
@@ -20,7 +22,9 @@
         mode="out-in"
         enter-active-class="animate__animated animate__fadeInLeft"
       >
-        <router-view></router-view>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
       </transition>
     </div>
   </div>
@@ -53,8 +57,8 @@ img {
   color: black;
 }
 
-.animate__animated.animate__fadeInLeft {
-  --animate-duration: 1.75s;
+.animate__animated.animate__fadeIn {
+  --animate-duration: 0.2s;
 }
 
 h1 {
@@ -104,6 +108,11 @@ export default {
         return {};
       },
     };
+  },
+  methods: {
+    mudar(e) {
+      e.preventDefault();
+    },
   },
 };
 </script>
