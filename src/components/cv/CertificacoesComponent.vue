@@ -23,7 +23,7 @@
       <transition
         name="fade"
         mode="out-in"
-        enter-active-class="animate__animated animate__zoomIn"
+        enter-active-class="animate__animated animate__fadeInLeft"
       >
         <router-view></router-view>
       </transition>
@@ -59,7 +59,7 @@ img {
 }
 
 .animate__animated.animate__fadeIn {
-  --animate-duration: 0.75s;
+  --animate-duration: 0.3s;
 }
 
 h1 {
