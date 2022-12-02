@@ -1,7 +1,7 @@
 <template>
   <div>
     <img
-      src="@/assets/imgs/certificados/certificadoHtml.jpeg"
+      src="@/assets/imgs/certificados/certificadoHtml.jpg"
       alt=""
       class="img-fluid"
       :class="estilos"

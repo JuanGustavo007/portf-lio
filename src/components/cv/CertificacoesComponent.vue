@@ -45,6 +45,7 @@
 <style scoped>
 .fade-enter-from {
   opacity: 1;
+  transform: translateX(-20px);
 }
 .fade-enter-active {
   transition: all 0.25s linear;
