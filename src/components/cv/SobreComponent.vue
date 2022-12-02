@@ -12,12 +12,12 @@
         <div class="col align-self-center">
           <h1>Sobre</h1>
           <p>
-            Atualmente sou estudante de gestão da tecnologia na FATEC de Jundiaí
-            e gostaria muito de conseguir uma oportunidade na área de
-            desenvolvimento de sistemas (Front-End). Acredito que a tecnologia é
-            a fonte para o meu futuro e da sociedade de modo geral, pois ela
-            proporciona a acessibilidade das informações que muitas das vezes
-            poderiamos nao ter sem ela.
+            Atualmente, sou estudante de gestão da tecnologia da informação na
+            FATEC de Jundiaí e gostaria muito de conseguir uma oportunidade na
+            área de desenvolvimento de sistemas (Front-End). Acredito, que a
+            tecnologia é a fonte para o meu futuro e da sociedade de modo geral,
+            pois ela proporciona acessibilidade das informações que muitas das
+            vezes poderíamos não ter sem ela.
           </p>
           <p>Amo animais :D</p>
           <h1 class="mt-5">Hobbies e lazer</h1>
