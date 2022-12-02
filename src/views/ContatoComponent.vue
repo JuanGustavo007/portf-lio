@@ -11,7 +11,7 @@
       <span>Desde já agradeço qualquer feedback e também pela sua atenção, muito obrigado  :D </span>
       <form class="mt-5"  action="https://formsubmit.co/juangustavomonteiro@gmail.com" method="POST">
         <div class="form-group mb-4">
-          <input type="hidden" name="_next" value="http://localhost:8080/ContatoComponent">
+         
           <input type="hidden" name="_captcha" value="false">
           <label for="exampleFormControlInput" class="mt-3">Nome:</label>
           <input type="text" name="name" class="form-control" placeholder="Digite seu nome" required>
