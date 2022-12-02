@@ -157,32 +157,6 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img
-              src="@/assets/imgs/projetos/lading.png"
-              class="card-img-top arrumar"
-              alt="landing page"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Landing page</h5>
-              <p class="card-text">Criação de uma landing page.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                Tecnologias: Html, Css, Javascript, Bootstrap.
-              </li>
-            </ul>
-            <div class="card-body d-flex align-items-end">
-              <a
-                href="https://www.linkedin.com/feed/update/urn:li:activity:7000215638149357568/"
-                class="card-link btn btn-dark"
-                target="_blank"
-                >Visualizar</a
-              >
-            </div>
-          </div>
-        </div>
 
         <div class="col">
           <div class="card h-100">

@@ -3,38 +3,64 @@
     <h1 class="mb-4"><span>Certificações</span></h1>
     <div class="divisao"></div>
     <div class="botoes d-flex justify-content-center gap-4 mb-4 p-3">
-      <router-link :to="{ name: 'html' }" class="botao html" @click="mudar"
-        >Html</router-link
+      <button
+        :to="{ name: 'html' }"
+        class="botao html"
+        @click="ativo = 'HtmlComponent'"
       >
-      <router-link :to="{ name: 'javascript' }" class="botao js" @click="mudar"
-        >Javascript</router-link
+        Html
+      </button>
+      <button
+        :to="{ name: 'javascript' }"
+        class="botao js"
+        @click="ativo = 'JavascriptComponent'"
       >
-      <router-link
+        Javascript
+      </button>
+      <button
         :to="{ name: 'bootstrap' }"
         class="botao bootstrap"
-        @click="mudar"
-        >Bootstrap</router-link
+        @click="ativo = 'BootstrapComponent'"
       >
-      <router-link :to="{ name: 'microsoft' }" class="botao ai" @click="mudar"
-        >AI-900</router-link
+        Bootstrap
+      </button>
+      <button
+        :to="{ name: 'microsoft' }"
+        class="botao ai"
+        @click="ativo = 'MicrosoftComponent'"
       >
+        AI-900
+      </button>
     </div>
     <div class="container d-flex justify-content-center certificados">
-      <transition
-        name="fade"
-        mode="out-in"
-        enter-active-class="animate__animated animate__fadeInLeft"
-      >
-        <router-view></router-view>
-      </transition>
+      <keep-alive>
+        <transition name="fade" mode="out-in">
+          <component :is="ativo"></component>
+        </transition>
+      </keep-alive>
     </div>
   </div>
 </template>
 
 <style scoped>
+.fade-enter-from {
+  opacity: 1;
+  transform: translateX(-20px);
+}
+.fade-enter-active {
+  transition: all 0.25s linear;
+}
+.fade-leave-to {
+  transition: all 0.25s linear;
+  opacity: 0;
+}
+
 img {
   max-width: 100%;
   display: block;
+}
+.botoes {
+  max-height: 600px;
 }
 .botao {
   padding: 10px;
@@ -81,7 +107,6 @@ span {
   background-color: #000;
   margin-bottom: 20px;
 }
-
 @media screen and (max-width: 543px) {
   .botao {
     font-size: 0.8rem;
@@ -99,15 +124,25 @@ span {
 </style>
 
 <script>
+import BootstrapComponent from "../certificadosComponents/BootstrapComponent.vue";
+import HtmlComponent from "../certificadosComponents/HtmlComponent.vue";
+import JavascriptComponent from "../certificadosComponents/JavascriptComponent.vue";
+import MicrosoftComponent from "../certificadosComponents/MicrosoftComponent.vue";
+import PadraoComponent from "../certificadosComponents/PadraoComponent.vue";
+
 export default {
   name: "CertificacoesComponent",
-
+  components: {
+    JavascriptComponent,
+    HtmlComponent,
+    BootstrapComponent,
+    MicrosoftComponent,
+    PadraoComponent,
+  },
   data() {
     return {
-      component: "HtmlComponent",
-      data() {
-        return {};
-      },
+      ativo: "HtmlComponent",
+      carregado: true,
     };
   },
   methods: {
