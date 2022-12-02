@@ -9,24 +9,13 @@
     <div class="container mt-5">
       <h1>Me envie uma mensagem:</h1>
       <span>Desde já agradeço qualquer feedback e também pela sua atenção, muito obrigado  :D </span>
-      <form class="mt-5" action="https://api.staticforms.xyz/submit" method="POST">
+      <form class="mt-5"  action="https://formsubmit.co/juangustavomonteiro@gmail.com" method="POST">
         <div class="form-group mb-4">
-          <label for="exampleFormControlInput1">Email:</label>
-          <input type="hidden" name="accessKey" value="47a4cd32-72ac-4261-9583-4b0a29d61a9c">
-          <input type="hidden" name="redirectTo" value="http://localhost:8080/ContatoComponent"/>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="name@example.com"
-            name="email"
-            required
-            v-model="email"
-          />
-          <label for="exampleFormControlInput" class="mt-3">Name:</label>
+          <input type="hidden" name="_next" value="http://localhost:8080/ContatoComponent">
+          <input type="hidden" name="_captcha" value="false">
+          <label for="exampleFormControlInput" class="mt-3">Nome:</label>
           <input type="text" name="name" class="form-control" placeholder="Digite seu nome" required>
         </div>
-
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Mensagem:</label>
           <textarea
