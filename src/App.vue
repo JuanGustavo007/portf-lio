@@ -15,5 +15,8 @@ export default {
   #app {
     overflow-x: hidden;
   }
+  body {
+    overflow-x: hidden;
+  }
 }
 </style>

@@ -1,71 +1,63 @@
 <template>
-  <div class="container mb-3 p-5" id="certificacoes" @scroll="altura($event)">
-    <h1 class="mb-4"><span>Certificações</span></h1>
-    <div class="divisao"></div>
-    <div class="botoes d-flex justify-content-center gap-4 mb-4 p-3">
-      <button
-        :to="{ name: 'html' }"
-        class="botao html"
-        @click="ativo = 'HtmlComponent'"
-      >
-        Html
-      </button>
-      <button
-        :to="{ name: 'javascript' }"
-        class="botao js"
-        @click="ativo = 'JavascriptComponent'"
-      >
-        Javascript
-      </button>
-      <button
-        :to="{ name: 'bootstrap' }"
-        class="botao bootstrap"
-        @click="ativo = 'BootstrapComponent'"
-      >
-        Bootstrap
-      </button>
-      <button
-        :to="{ name: 'microsoft' }"
-        class="botao ai"
-        @click="ativo = 'MicrosoftComponent'"
-      >
-        AI-900
-      </button>
-    </div>
-    <div class="container d-flex justify-content-center certificados">
-      <keep-alive>
-        <transition name="fade" mode="out-in">
-          <component :is="ativo"></component>
-        </transition>
-      </keep-alive>
+  <div class="container-fluid">
+    <div class="container" id="certificacoes" @scroll="altura($event)">
+      <h1 class="mb-4"><span>Certificações</span></h1>
+      <div class="divisao"></div>
+      <div class="row mt-5">
+        <div
+          class="col-2 botoes gap-4 mb-4 p-3 d-flex flex-column justify-content-center"
+        >
+          <ul class="d-flex flex-column justify-content-center">
+            <router-link :to="{ name: 'html' }" class="botao html w-100">
+              Html
+            </router-link>
+            <router-link :to="{ name: 'javascript' }" class="botao js w-100">
+              Javascript
+            </router-link>
+            <router-link
+              :to="{ name: 'bootstrap' }"
+              class="botao bootstrap w-100"
+            >
+              Bootstrap
+            </router-link>
+            <router-link :to="{ name: 'microsoft' }" class="botao ai w-100">
+              AI-900
+            </router-link>
+          </ul>
+        </div>
+        <div class="col">
+          <div>
+            <keep-alive>
+              <transition
+                name="fade"
+                mode="out-in"
+                enter-active-class="animate__animated animate__fadeInRight"
+                leave-active-class="animate__animated animate__fadeOutLeft"
+              >
+                <router-view class="rota"></router-view>
+              </transition>
+            </keep-alive>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.fade-enter-from {
-  opacity: 1;
-}
-.fade-enter-active {
-  transition: all 0.25s linear;
-}
-.fade-leave-to {
-  transition: all 0.25s linear;
-  opacity: 0;
-}
-
-img {
-  max-width: 100%;
-  display: block;
+.rota {
+  max-height: 100%;
 }
 .botoes {
   max-height: 600px;
 }
 .botao {
   padding: 10px;
-  background-color: #282a2d;
+  background-color: yellow;
+  border: 2px solid black;
   border-radius: 8px;
-  color: white;
+  color: black;
+  text-transform: uppercase;
   text-decoration: none;
   width: 150px;
   text-align: center;
@@ -73,18 +65,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 .botao:hover {
   transition: ease-in;
   transition-duration: 0.3s;
-}
-.router-link-exact-active {
-  background-color: rgba(70, 235, 97);
-  color: black;
-}
-
-.animate__animated.animate__fadeIn {
-  --animate-duration: 0.3s;
 }
 
 h1 {
@@ -100,44 +85,63 @@ span {
   text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000,
     -1px -1px 1px #000;
 }
-
-.divisao {
-  height: 2px;
-  background-color: #000;
-  margin-bottom: 20px;
+ul {
+  padding: 0;
+  gap: 20px;
 }
-@media screen and (max-width: 543px) {
-  .botao {
-    font-size: 0.8rem;
-    width: 200px;
+
+#certificacoes {
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+}
+
+.container-fluid {
+  background-color: rgb(128, 0, 128);
+  border-bottom: 4px solid black;
+  border-top: 4px solid black;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.botao-ativo {
+  background-color: #2f3136;
+}
+.router-link-active {
+  background-color: #2f3136;
+  border-color: rgba(0, 128, 0, 0.3);
+  color: white;
+}
+
+@media screen and (max-width: 992px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  ul {
+    display: flex;
+    flex-direction: row !important;
   }
   .botoes {
-    gap: 10px !important;
-    padding: 0 !important;
+    width: 100%;
   }
-  #certificacoes {
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
+}
+@media screen and (max-width: 500px) {
+  .botao {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+  .botoes {
+    margin-bottom: 0 !important;
+  }
+  ul {
+    gap: 5px;
   }
 }
 </style>
 
 <script>
-import BootstrapComponent from "../certificadosComponents/BootstrapComponent.vue";
-import HtmlComponent from "../certificadosComponents/HtmlComponent.vue";
-import JavascriptComponent from "../certificadosComponents/JavascriptComponent.vue";
-import MicrosoftComponent from "../certificadosComponents/MicrosoftComponent.vue";
-import PadraoComponent from "../certificadosComponents/PadraoComponent.vue";
-
 export default {
   name: "CertificacoesComponent",
-  components: {
-    JavascriptComponent,
-    HtmlComponent,
-    BootstrapComponent,
-    MicrosoftComponent,
-    PadraoComponent,
-  },
+  components: {},
   data() {
     return {
       ativo: "HtmlComponent",

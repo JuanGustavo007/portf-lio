@@ -1,59 +1,32 @@
 <template>
-  <header class="menu">
-    <nav
-      class="navbar navbar-expand-md navbar-dark"
-      style="background-color: rgb(40, 42, 45)"
-    >
-      <div class="container-fluid p-4">
-        <h2 class="navbar-brand nome" href="#">&lt;Juan G./&gt;</h2>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarCollapse"
-        >
-          <div class="d-flex menu-burger">
-            <ul class="d-flex">
-              <li>
-                <a href="#sobre" class="bordinha" @click="ir">Sobre</a>
-              </li>
-              <li>
-                <a href="#projetos" class="bordinha" @click="ir">Projetos</a>
-              </li>
-              <li>
-                <a href="#certificacoes" class="bordinha" @click="ir"
-                  >Certificações</a
-                >
-              </li>
-
-              <router-link to="/ContatoComponent">
-                <li class="contato">
-                  <a href="" class="mensagem">Mensagem</a>
-                </li>
-              </router-link>
-            </ul>
-          </div>
-        </div>
-      </div>
+  <header id="header" class="p-5">
+    <a id="logo" href="" class="nome">&lt;Juan G./&gt;</a>
+    <nav id="nav">
+      <button
+        aria-label="Abrir Menu"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-controls="menu"
+        id="btn-mobile"
+        @click="toggleMenu"
+      >
+        <span id="hamburger"></span>
+      </button>
+      <ul id="menu" role="menu">
+        <li><a href="/" @click="ir">Sobre</a></li>
+        <li><a href="#projetos" @click="ir">Projeto</a></li>
+        <li><a href="#certificacoes" @click="ir">Certificações</a></li>
+        <li><router-link to="/ContatoComponent">Mensagem</router-link></li>
+      </ul>
     </nav>
   </header>
 </template>
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+a:hover {
+  color: #07e66d;
+  background-color: white;
+  text-shadow: 1px 1px black;
 }
 .nome {
   color: #07e66d;
@@ -62,96 +35,143 @@
 }
 .nome:hover {
   color: white;
-  cursor: pointer;
 }
-.menu {
-  border-bottom: 3px solid black;
-}
+
+body,
 ul {
-  list-style: none;
-  gap: 5px;
-}
-li {
-  padding: 5px 10px;
-  border: 1px solid black;
+  margin: 0px;
+  padding: 0px;
 }
 
 a {
   color: white;
   text-decoration: none;
+  font-family: sans-serif;
+  text-transform: uppercase;
 }
-.bordinha {
-  text-decoration: none;
-  color: white;
-}
-.bordinha:hover {
-  border-bottom: 1px solid white;
-}
-
-.contato {
-  background-color: red;
-  border: 2px solid black;
-  color: white;
-}
-.contato a {
-  text-shadow: 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000,
-    -1px -1px 1px #000;
+li {
+  display: flex;
+  align-items: center;
 }
 
-.contato:hover {
-  cursor: pointer;
+#logo {
+  font-size: 1.5rem;
 }
-.mensagem {
-  color: white;
+
+#header {
+  box-sizing: border-box;
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(40, 42, 45);
 }
-.mensagem:hover {
-  border-bottom: 1px solid white;
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
 }
-@media screen and (max-width: 768px) {
-  ul {
-    display: flex;
-    flex-direction: column;
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+#btn-mobile {
+  display: none;
+}
+
+li {
+  border: 1px solid white;
+}
+@media (max-width: 600px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background-color: white;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
   }
-  .menu-burger {
-    display: flex;
-    justify-content: center;
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
   }
-  .menu-burger ul {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-  }
-  a {
-    font-size: 10px;
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    color: black;
   }
   li {
-    height: 100%;
+    border-bottom: 1px solid black;
+  }
+  #btn-mobile {
     display: flex;
-    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
   }
-}
-
-@media screen and (max-width: 310px) {
-  img {
-    width: 15px;
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
   }
-  a {
-    font-size: 7px;
+  #hamburger::after,
+  #hamburger::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
   }
-  body {
-    overflow-x: hidden;
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
   }
 }
 </style>
 
 <script>
 export default {
-  data() {
-    return {};
-  },
-  props: ["nome"],
   methods: {
+    toggleMenu(event) {
+      const btnMobile = document.getElementById("btn-mobile");
+      console.log(btnMobile);
+      const button = event.currentTarget;
+      const nav = document.getElementById("nav");
+      if (button instanceof HTMLElement && nav) {
+        const active = nav.classList.contains("active");
+        if (active) {
+          nav.classList.remove("active");
+          button.setAttribute("aria-expanded", "false");
+          button.setAttribute("aria-label", "Abrir Menu");
+        } else {
+          nav.classList.add("active");
+          button.setAttribute("aria-expanded", "true");
+          button.setAttribute("aria-label", "Fechar Menu");
+        }
+      }
+    },
     ir(e) {
       e.preventDefault();
       const element = e.target;
@@ -176,5 +196,7 @@ export default {
       // console.log(menuLinks);
     },
   },
+
+  mounted() {},
 };
 </script>

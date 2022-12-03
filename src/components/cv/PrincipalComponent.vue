@@ -13,7 +13,7 @@
       <ProjetosComponent></ProjetosComponent>
     </section>
     <section data-anime="right">
-      <CertificacoesComponentVue></CertificacoesComponentVue>
+      <router-view></router-view>
     </section>
     <section data-anime="left">
       <FooterComponent></FooterComponent>
@@ -27,7 +27,6 @@ import FotoComponent from "./FotoComponent.vue";
 import SobreComponent from "./SobreComponent.vue";
 import ProjetosComponent from "./ProjetosComponent.vue";
 import FooterComponent from "./FooterComponent.vue";
-import CertificacoesComponentVue from "./CertificacoesComponent.vue";
 
 export default {
   name: "PrincipalComponent",
@@ -37,7 +36,6 @@ export default {
     SobreComponent,
     ProjetosComponent,
     FooterComponent,
-    CertificacoesComponentVue,
   },
 
   // },
