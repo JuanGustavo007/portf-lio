@@ -9,8 +9,8 @@
       </p>
       <p class="texto">
         As aulas eram iniciadas explicando os conceitos e posteriormente eram
-        realizadas atividades práticas, como: animaçoes de scroll, slide, menu
-        mobile, eventos e manipulação do DOM.
+        realizadas atividades práticas, como: animações de scroll, slide,
+        menu-mobile, eventos e manipulação do DOM.
       </p>
       <h3 class="mt-4">Instituição: <span>Origamid</span></h3>
       <h4 class="mt-4">Carga horária: <span>18 Horas</span></h4>

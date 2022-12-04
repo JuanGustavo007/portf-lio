@@ -1,5 +1,4 @@
 import PrincipalComponent from "@/components/cv/PrincipalComponent.vue";
-import ContatoComponent from "@/views/ContatoComponent.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import HtmlComponent from "@/components/certificadosComponents/HtmlComponent.vue";
 import JavascriptComponent from "@/components/certificadosComponents/JavascriptComponent.vue";
@@ -41,10 +40,6 @@ const routes = [
         ],
       },
     ],
-  },
-  {
-    path: "/ContatoComponent",
-    component: ContatoComponent,
   },
 ];
 

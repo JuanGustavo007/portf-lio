@@ -5,12 +5,12 @@
       <p>
         O curso de Html e Css foi o primeiro contato que eu tive com o
         front-end. Realizado na B7web, esse curso me mostrou como funciona uma
-        página web e como las construi.
+        página web e como construí-las.
       </p>
       <p class="texto">
         As aulas eram dinâmicas, com teoria e prática logo em seguida. Durante o
         curso, foram realizados alguns projetos e um deles foi o clone de uma
-        das páginas do Starbucks, usando as tags semânticas e a foi explicado o
+        das páginas do Starbucks, usando as tags semânticas e foi explicado o
         conceito de mobile-first (responsividade).
       </p>
       <h3 class="mt-4">Instituição: <span>B7web</span></h3>

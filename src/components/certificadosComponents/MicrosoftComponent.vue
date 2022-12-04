@@ -10,9 +10,9 @@
       </p>
       <p class="texto">
         Foram 2 semanas de estudo intensivo, onde o professor mostro diversos
-        tópicos da inteligencia artificial e como utiliza-la dentro da
+        tópicos da inteligência artificial e como utilizá-la dentro da
         plataforma Azure. As aulas eram iniciadas com a teoria e depois iamos
-        para a pratica.
+        para a prática.
       </p>
       <h3 class="mt-4">Instituição: <span>Microsoft</span></h3>
       <h4 class="mt-4">Carga horária: <span>40 Horas</span></h4>

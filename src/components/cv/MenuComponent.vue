@@ -14,16 +14,15 @@
       </button>
       <ul id="menu" role="menu">
         <li><a href="/" @click="ir">Sobre</a></li>
-        <li><a href="#projetos" @click="ir">Projeto</a></li>
+        <li><a href="#projetos" @click="ir">Projetos</a></li>
         <li><a href="#certificacoes" @click="ir">Certificações</a></li>
-        <li><router-link to="/ContatoComponent">Mensagem</router-link></li>
       </ul>
     </nav>
   </header>
 </template>
 
 <style scoped>
-a:hover {
+ul a:hover {
   color: #07e66d;
   background-color: white;
   text-shadow: 1px 1px black;

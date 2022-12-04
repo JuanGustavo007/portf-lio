@@ -22,6 +22,12 @@
       >
         <img src="@/assets/imgs/curriculo.png" alt="" />
       </a>
+      <a
+        href="https://web.whatsapp.com/send?phone=5511953115699"
+        target="_blank"
+      >
+        <img src="@/assets/imgs/zap.png" alt="" />
+      </a>
     </div>
   </div>
 </template>
